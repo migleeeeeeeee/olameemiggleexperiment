@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+/*
+ * Olamee Design System - Tailwind v4 Theme Integration
+ *
+ * Maps CSS custom properties (injected by ThemeProvider) into Tailwind utilities.
+ * Usage: class="bg-primary text-gunmetal-700 shadow-elevation-2 rounded-md"
+ */
+
+@theme {
+  /* -- Brand Colors ------------------------------------------------ */
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary: var(--color-primary);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent: var(--color-accent);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+
+  /* -- Neutrals ---------------------------------------------------- */
+  --color-gunmetal-lightest: var(--color-gunmetal-lightest);
+  --color-gunmetal-50: var(--color-gunmetal-50);
+  --color-gunmetal-100: var(--color-gunmetal-100);
+  --color-gunmetal-200: var(--color-gunmetal-200);
+  --color-gunmetal-300: var(--color-gunmetal-300);
+  --color-gunmetal-400: var(--color-gunmetal-400);
+  --color-gunmetal-500: var(--color-gunmetal-500);
+  --color-gunmetal: var(--color-gunmetal);
+  --color-gunmetal-700: var(--color-gunmetal-700);
+  --color-gunmetal-800: var(--color-gunmetal-800);
+
+  --color-space-cadet-50: var(--color-spaceCadet-50);
+  --color-space-cadet-100: var(--color-spaceCadet-100);
+  --color-space-cadet-200: var(--color-spaceCadet-200);
+  --color-space-cadet-300: var(--color-spaceCadet-300);
+  --color-space-cadet: var(--color-spaceCadet);
+  --color-space-cadet-500: var(--color-spaceCadet-500);
+  --color-space-cadet-600: var(--color-spaceCadet-600);
+  --color-space-cadet-700: var(--color-spaceCadet-700);
+  --color-space-cadet-800: var(--color-spaceCadet-800);
+
+  /* -- Semantic Colors ---------------------------------------------- */
+  --color-red-50: var(--color-red-50);
+  --color-red-100: var(--color-red-100);
+  --color-red-200: var(--color-red-200);
+  --color-red-300: var(--color-red-300);
+  --color-red: var(--color-red);
+  --color-red-500: var(--color-red-500);
+  --color-red-600: var(--color-red-600);
+  --color-red-700: var(--color-red-700);
+  --color-red-800: var(--color-red-800);
+
+  --color-orange-50: var(--color-orange-50);
+  --color-orange-100: var(--color-orange-100);
+  --color-orange-200: var(--color-orange-200);
+  --color-orange-300: var(--color-orange-300);
+  --color-orange: var(--color-orange);
+  --color-orange-500: var(--color-orange-500);
+  --color-orange-600: var(--color-orange-600);
+  --color-orange-700: var(--color-orange-700);
+  --color-orange-800: var(--color-orange-800);
+
+  --color-mantis-50: var(--color-mantis-50);
+  --color-mantis-100: var(--color-mantis-100);
+  --color-mantis-200: var(--color-mantis-200);
+  --color-mantis-300: var(--color-mantis-300);
+  --color-mantis: var(--color-mantis);
+  --color-mantis-500: var(--color-mantis-500);
+  --color-mantis-600: var(--color-mantis-600);
+  --color-mantis-700: var(--color-mantis-700);
+  --color-mantis-800: var(--color-mantis-800);
+
+  --color-lavender-50: var(--color-lavender-50);
+  --color-lavender-100: var(--color-lavender-100);
+  --color-lavender-200: var(--color-lavender-200);
+  --color-lavender-300: var(--color-lavender-300);
+  --color-lavender: var(--color-lavender);
+  --color-lavender-500: var(--color-lavender-500);
+  --color-lavender-600: var(--color-lavender-600);
+  --color-lavender-700: var(--color-lavender-700);
+  --color-lavender-800: var(--color-lavender-800);
+
+  --color-amaranth-50: var(--color-amaranthPurple-50);
+  --color-amaranth-100: var(--color-amaranthPurple-100);
+  --color-amaranth-200: var(--color-amaranthPurple-200);
+  --color-amaranth-300: var(--color-amaranthPurple-300);
+  --color-amaranth: var(--color-amaranthPurple);
+  --color-amaranth-500: var(--color-amaranthPurple-500);
+  --color-amaranth-600: var(--color-amaranthPurple-600);
+  --color-amaranth-700: var(--color-amaranthPurple-700);
+  --color-amaranth-800: var(--color-amaranthPurple-800);
+
+  --color-reseda-50: var(--color-resedaGreen-50);
+  --color-reseda-100: var(--color-resedaGreen-100);
+  --color-reseda-200: var(--color-resedaGreen-200);
+  --color-reseda-300: var(--color-resedaGreen-300);
+  --color-reseda: var(--color-resedaGreen);
+  --color-reseda-500: var(--color-resedaGreen-500);
+  --color-reseda-600: var(--color-resedaGreen-600);
+  --color-reseda-700: var(--color-resedaGreen-700);
+  --color-reseda-800: var(--color-resedaGreen-800);
+
+  --color-electric-50: var(--color-electricBlue-50);
+  --color-electric-100: var(--color-electricBlue-100);
+  --color-electric-200: var(--color-electricBlue-200);
+  --color-electric-300: var(--color-electricBlue-300);
+  --color-electric: var(--color-electricBlue);
+  --color-electric-500: var(--color-electricBlue-500);
+  --color-electric-600: var(--color-electricBlue-600);
+  --color-electric-700: var(--color-electricBlue-700);
+  --color-electric-800: var(--color-electricBlue-800);
+
+  /* -- Typography - Font Families ---------------------------------- */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Karla', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* -- Typography - Font Weights ----------------------------------- */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* -- Typography - Heading Scale (Montserrat) --------------------- */
+  --font-size-h1: var(--font-size-h1);
+  --line-height-h1: var(--line-height-h1);
+  --font-size-h2: var(--font-size-h2);
+  --line-height-h2: var(--line-height-h2);
+  --font-size-h3: var(--font-size-h3);
+  --line-height-h3: var(--line-height-h3);
+  --font-size-h4: var(--font-size-h4);
+  --line-height-h4: var(--line-height-h4);
+  --font-size-h5: var(--font-size-h5);
+  --line-height-h5: var(--line-height-h5);
+  --font-size-h6: var(--font-size-h6);
+  --line-height-h6: var(--line-height-h6);
+
+  /* -- Typography - Body Scale (Karla) ----------------------------- */
+  --font-size-body-lg: var(--font-size-body-lg);
+  --line-height-body-lg: var(--line-height-body-lg);
+  --font-size-body-base: var(--font-size-body-base);
+  --line-height-body-base: var(--line-height-body-base);
+  --font-size-body-sm: var(--font-size-body-sm);
+  --line-height-body-sm: var(--line-height-body-sm);
+  --font-size-body-xs: var(--font-size-body-xs);
+  --line-height-body-xs: var(--line-height-body-xs);
+
+  /* -- Typography - Button Scale (Karla Bold) ---------------------- */
+  --font-size-btn-lg: var(--font-size-btn-lg);
+  --line-height-btn-lg: var(--line-height-btn-lg);
+  --font-size-btn-base: var(--font-size-btn-base);
+  --line-height-btn-base: var(--line-height-btn-base);
+  --font-size-btn-sm: var(--font-size-btn-sm);
+  --line-height-btn-sm: var(--line-height-btn-sm);
+  --font-size-btn-xs: var(--font-size-btn-xs);
+  --line-height-btn-xs: var(--line-height-btn-xs);
+
+  /* -- Typography - Letter Spacing --------------------------------- */
+  --letter-spacing-tight: var(--letter-spacing-tight);
+  --letter-spacing-normal: var(--letter-spacing-normal);
+
+  /* -- Elevation / Shadows ----------------------------------------- */
+  --shadow-elevation-1: var(--shadow-elevation-1);
+  --shadow-elevation-2: var(--shadow-elevation-2);
+  --shadow-elevation-3: var(--shadow-elevation-3);
+
+  /* -- Border Radius ----------------------------------------------- */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-md-lg: var(--radius-md-lg);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-full: var(--radius-full);
+}
+
+/* -- Base Resets --------------------------------------------------- */
+
+@layer base {
+  :root {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    color: var(--color-gunmetal);
+    background-color: #ffffff;
+  }
+
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-gunmetal-200);
+  }
+}
